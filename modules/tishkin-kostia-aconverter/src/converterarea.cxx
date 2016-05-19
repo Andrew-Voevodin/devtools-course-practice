@@ -38,22 +38,21 @@ std::vector<AreaUnit> AreaConverter::GetUnit() const {
 }
 
 AreaUnit& AreaConverter::GetUnit(const std::string& qualifier) const {
-	std::vector<AreaUnit>::const_iterator res = units_.end();
+    std::vector<AreaUnit>::const_iterator res = units_.end();
 
-	for (auto it = units_.begin(); it != units_.end(); ++it) {
-		if (it->Qualifier() == qualifier) {
-			res = it;
-			break;
-		}
-	}
+    for (auto it = units_.begin(); it != units_.end(); ++it) {
+        if (it->Qualifier() == qualifier) {
+            res = it;
+            break;
+        }
+    }
 
-	if (res != units_.end()) {
-		return const_cast<AreaUnit&>(*res);
-	}
-	else {
-		throw std::domain_error("Undefined AreaUnit with qualifier "
-			+ qualifier + "!");
-	}
+    if (res != units_.end()) {
+       return const_cast<AreaUnit&>(*res);
+    } else {
+       throw std::domain_error("Undefined AreaUnit with qualifier "
+              + qualifier + "!");
+    }
 }
 
 void AreaConverter::ClearUnit() {

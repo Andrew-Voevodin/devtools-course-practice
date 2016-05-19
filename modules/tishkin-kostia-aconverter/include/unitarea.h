@@ -1,13 +1,12 @@
 // Copyright 2016 Tishkin Konstantin
 
-#ifndef MODULES_ACONVERTER_INCLUDE_UNITAREA_H_
-#define MODULES_ACONVERTER_INCLUDE_UNITAREA_H_
+#ifndef MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_UNITAREA_H_
+#define MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_UNITAREA_H_
 
 #include <string>
 #include <vector>
 
 class AreaUnit {
-
  public:
      AreaUnit(double coefficient, const std::string);
 
@@ -28,7 +27,7 @@ AreaType(a.GetAreaType()) { }
     bool operator==(const AreaUnit &other) const;
 
     bool operator!=(const AreaUnit &other) const;
-private:
+ private:
     double coefficient_;
     std::string AreaType;
 };

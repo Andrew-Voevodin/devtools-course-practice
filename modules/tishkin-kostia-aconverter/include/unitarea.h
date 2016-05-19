@@ -35,4 +35,4 @@ extern const AreaUnit AreaUnitMeter;
 extern const AreaUnit AreaUnitWeaving;
 extern const AreaUnit AreaUnitHectare;
 extern const std::vector<AreaUnit> DefaultAreaUnits;
-#endif  // MODULES_ACONVERTER_INCLUDE_UNITAREA_H_
+#endif  // MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_UNITAREA_H_

@@ -1,17 +1,17 @@
 // Copyright 2016 Voevodin Andrew
 
-#ifndef MODULES_VOEVODIN_ANDREW_SQCONVERTER_INCLUDE_COMPLEX_CALCULATOR_H_
-#define MODULES_VOEVODIN_ANDREW_SQCONVERTER_INCLUDE_COMPLEX_CALCULATOR_H_
+#ifndef MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_SQ_CONVERTER_H_ 
+#define MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_SQ_CONVERTER_H_ 
 
 #include <string>
 #include "include/converterarea.h"
 
 class SQConverter {
-public:
+ public:
     SQConverter();
     std::string operator()(int argc, const char** argv);
 
-private:
+ private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
@@ -22,4 +22,4 @@ private:
     } Arguments;
 };
 
-#endif  // MODULES_VOEVODIN_ANDREW_SQCONVERTER_INCLUDE_COMPLEX_CALCULATOR_H_
+#endif  // MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_SQ_CONVERTER_H_

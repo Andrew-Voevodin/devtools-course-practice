@@ -10,5 +10,4 @@ int main(int argc, const char** argv) {
      std::string output = app(argc, argv);
      std::cout << output << std::endl;
      return 0;
-
 }

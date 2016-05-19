@@ -35,13 +35,10 @@ void SQConverter::help(const char* appname, const char* message) {
         for (size_t i = 0; i < v.size(); ++i) {
         if (i != 0) {
             message_ += ", ";
-
         }
         message_ += v[i].Qualifier();
-
     }
     message_ += "\n";
-
 }
 
 bool SQConverter::validateNumberOfArguments(int argc,
@@ -49,18 +46,13 @@ const char** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
-		
     }
     else if (argc != 4) {
         help(argv[0], "ERROR: Should be 3 arguments.\n\n");
         return false;
-
-    }
-    else {
+    } else {
          return true;
-
     }
-
 }
 
 double parseDouble(const char* arg) {
@@ -68,47 +60,33 @@ double parseDouble(const char* arg) {
      double value = strtod(arg, &end);
 
          if (end[0]) {
-         throw std::string("Wrong number format!");
-		
+         throw std::string("Wrong number format!");	
       }
-
          return value;
-
 }
 
 std::string SQConverter::operator()(int argc, const char** argv) {
      Arguments args;
 
         if (!validateNumberOfArguments(argc, argv)) {
-        return message_;
-		
+        return message_;		
      }
-
         try {
         args.value = parseDouble(argv[1]);
         args.from = std::string(argv[2]);
         args.to = std::string(argv[3]);
-
     }
     catch (std::string str) {
        return str;
-
     }
-
          AreaUnit from(1.0, "kg"), to(1.0, "kg");
-
     try {
         from = converter_.GetUnit(args.from);
-        to = converter_.GetUnit(args.to);
-		
+        to = converter_.GetUnit(args.to);	
     }
     catch (const std::domain_error &e) {
         return e.what();
-
     }
-
         double res = converter_.Convert(from, to, args.value);
-
         return converter_.ConvertToString(to, res);
-
 }

@@ -10,8 +10,7 @@
 #include "include/unitarea.h"
 
 class AreaConverter {
-
-public:
+ public:
     explicit AreaConverter(const std::vector<AreaUnit>
                  &units = DefaultAreaUnits);
 
@@ -28,7 +27,7 @@ public:
 
     std::string ConvertToString(const AreaUnit
         &unit, double value, int precision = 4) const;
-private:
+ private:
     std::vector<AreaUnit> units;
 };
 #endif  // MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_CONVERTERAREA_H_

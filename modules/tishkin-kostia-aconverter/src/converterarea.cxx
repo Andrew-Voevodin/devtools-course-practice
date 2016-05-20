@@ -12,29 +12,29 @@
 
 
 AreaConverter::AreaConverter(const std::vector<AreaUnit> &units ) {
-    this->units = std::vector<AreaUnit>(units);
+    this->units_ = std::vector<AreaUnit>(units);
 
-    auto last = std::unique(this->units.begin(),
-                            this->units.end(),
+    auto last = std::unique(this->units_.begin(),
+                            this->units_.end(),
                             [](const AreaUnit &a, const AreaUnit &b) {
                                 return a.GetAreaType() == b.GetAreaType();
                             });
 
-    if (last != this->units.end())
+    if (last != this->units_.end())
         throw std::invalid_argument("unit qualifiers must be unique");
 }
 
-void AreaConverter::AddUnit(const AreaUnit new_unit) {
-    for (auto &unit : units) {
+void AreaConverter::AddUnit(const AreaUnit &new_unit) {
+    for (auto &unit : units_) {
         if (unit.GetAreaType() == new_unit.GetAreaType())
             throw std::invalid_argument("unit is already added to converter");
     }
 
-    units.push_back(new_unit);
+    units_.push_back(new_unit);
 }
 
 std::vector<AreaUnit> AreaConverter::GetUnit() const {
-    return units;
+    return units_;
 }
 
 AreaUnit& AreaConverter::GetUnit(const std::string& qualifier) const {
@@ -56,11 +56,11 @@ AreaUnit& AreaConverter::GetUnit(const std::string& qualifier) const {
 }
 
 void AreaConverter::ClearUnit() {
-    units.clear();
+    units_.clear();
 }
 
-double AreaConverter::Convert(const AreaUnit from,
-const AreaUnit to, double value) const {
+double AreaConverter::Convert(const AreaUnit &from,
+const AreaUnit &to, double value) const {
     if (value < 0)
         throw std::invalid_argument("value must be not negative");
 
@@ -81,5 +81,3 @@ double value, int precision) const {
     stringStream << unit.GetAreaType();
     return stringStream.str();
 }
-
-

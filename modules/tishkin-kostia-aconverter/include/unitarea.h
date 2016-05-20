@@ -1,7 +1,7 @@
 // Copyright 2016 Tishkin Konstantin
 
-#ifndef MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_UNITAREA_H_
-#define MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_UNITAREA_H_
+#ifndef MODULES_ACONVERTER_INCLUDE_UNITAREA_H_
+#define MODULES_ACONVERTER_INCLUDE_UNITAREA_H_
 
 #include <string>
 #include <vector>
@@ -35,4 +35,4 @@ extern const AreaUnit AreaUnitMeter;
 extern const AreaUnit AreaUnitWeaving;
 extern const AreaUnit AreaUnitHectare;
 extern const std::vector<AreaUnit> DefaultAreaUnits;
-#endif  // MODULES_TISHKIN_KOSTIA_ACONVERTER_INCLUDE_UNITAREA_H_
+#endif  // MODULES_ACONVERTER_INCLUDE_UNITAREA_H_
